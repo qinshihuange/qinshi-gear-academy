@@ -22,6 +22,10 @@ jobs:
         with:
           targets: wasm32-unknown-unknown
 
+      - name: test
+        run: |
+          rustup component add rust-src --toolchain stable-x86_64-unknown-linux-gnu
+
       - name: Check and test
         run: |
           cargo fmt --all --check
